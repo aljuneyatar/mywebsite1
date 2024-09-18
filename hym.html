@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        
+        /* Full-screen blue gradient background with parallax effect */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, rgba(0, 0, 255, 0.7), rgba(0, 128, 255, 0.7));
+            background-size: cover;
+            background-attachment: fixed;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            perspective: 1px; /* Enable parallax effect */
+        }
+
+        /* Overlay to improve text visibility */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            z-index: 1;
+            filter: blur(8px); /* Smudged effect */
+            pointer-events: none; /* Ensure overlay does not block interaction */
+        }
+
+        /* Pattern overlay */
+        .pattern-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.5) 60%);
+            mask: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.5) 60%);
+            z-index: 2; /* Place pattern above the blurred overlay */
+            pointer-events: none; /* Ensure pattern does not block interaction */
+        }
+
+        /* Container that holds the content */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            position: relative;
+            z-index: 3; /* Place content above the pattern overlay */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Logo styling with pop-up animation */
+        @keyframes popUp {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Main content styling */
+        main h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #0073e6; /* Blue color */
+            font-weight: bold; /* Emphasize with bold text */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for emphasis */
+        }
+
+        main p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #eeeeee;
+        }
+
+        /* Responsive text adjustments */
+        @media (max-width: 1200px) {
+            main h1 {
+                font-size: 2rem;
+            }
+
+            main p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            main h1 {
+                font-size: 1.5rem;
+            }
+
+            main p {
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Loading animation styling */
+        .loading {
+            --speed-of-animation: 0.9s;
+            --gap: 6px;
+            --first-color: #4c86f9;
+            --second-color: #49a84c;
+            --third-color: #f6bb02;
+            --fourth-color: #f6bb02;
+            --fifth-color: #2196f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            gap: 6px;
+            height: 100px;
+            position: absolute; /* Use absolute positioning */
+            top: 41%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for centering */
+        }
+
+        /* Logo styling with pop-up animation */
+        .logo {
+            width: 500px; /* Increase the size of the logo */
+            animation: popUp 1s ease-in-out; /* Apply the pop-up animation */
+        }
+
+        .loading span {
+            width: 4px;
+            height: 50px;
+            background: var(--first-color);
+            animation: scale var(--speed-of-animation) ease-in-out infinite;
+        }
+
+        .loading span:nth-child(2) {
+            background: var(--second-color);
+            animation-delay: -0.8s;
+        }
+
+        .loading span:nth-child(3) {
+            background: var(--third-color);
+            animation-delay: -0.7s;
+        }
+
+        .loading span:nth-child(4) {
+            background: var(--fourth-color);
+            animation-delay: -0.6s;
+        }
+
+        .loading span:nth-child(5) {
+            background: var(--fifth-color);
+            animation-delay: -0.5s;
+        }
+
+        @keyframes scale {
+            0%, 40%, 100% {
+                transform: scaleY(0.05);
+            }
+
+            20% {
+                transform: scaleY(1);
+            }
+        }
+
+        /* Button styling */
+        .button {
+            background-color: #ffffff00;
+            color: #fff;
+            width: 8.5em;
+            height: 2.9em;
+            border: #3654ff 0.2em solid;
+            border-radius: 11px;
+            text-align: right;
+            transition: all 0.6s ease;
+            margin-top: 20px; /* Space above the button */
+        }
+
+        .button:hover {
+            background-color: #3654ff;
+            cursor: pointer;
+        }
+
+        .button svg {
+            width: 1.6em;
+            margin: -0.2em 0.8em 1em;
+            position: absolute;
+            display: flex;
+            transition: all 0.6s ease;
+        }
+
+        .button:hover svg {
+            transform: translateX(5px);
+        }
+
+        .text {
+            margin: 0 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="pattern-overlay"></div>
+    <div class="container">
+        <header>
+            <img src="images/logo3.png" alt="Logo" class="logo">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br
+        </header>
+        
+        <main>
+            
+            <h1>ASU HYM</h1>
+            <p>Oh God, bless my Alma Mater,
+                ASU, beloved;
+                To Thee O Lord, I pray.
+                ASU, I love thee,
+                Thy solemn pledge, I vow eternally;
+                Thy hallowed halls, thy verdant fields
+                Are treasures in my memory.
+                Upon this land forever reigns
+                My Alma Mater, queen divine–
+                Shine on, Shine on,
+                Thy gift of heaven
+                Shine… Shine on,
+                (Finale) O God, bless my Alma Mater</p>
+            <br>
+            <!-- Loading animation below the text and centered -->
+            <div class="loading">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <br><br>
+            <!-- Button placed below the loading animation -->
+            <button class="button" onclick="window.location.href='mycss.html';">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+                </svg>
+                <div class="text">
+                    Home
+                </div>
+            </button>
+        </main>
+    </div>
+    <script>
+        // Function to adjust the font size and image size based on viewport width
+        function adjustResponsiveness() {
+            const width = window.innerWidth;
+            const h1 = document.querySelector('h1');
+            const p = document.querySelector('p');
+            const logo = document.querySelector('.logo');
+        
+            if (width > 1200) {
+                h1.style.fontSize = '2.5rem';
+                p.style.fontSize = '1.25rem';
+                logo.style.width = '200px';  // Increased logo size
+            } else if (width > 768) {
+                h1.style.fontSize = '2rem';
+                p.style.fontSize = '1rem';
+                logo.style.width = '150px';  // Increased logo size
+            } else {
+                h1.style.fontSize = '1.5rem';
+                p.style.fontSize = '0.875rem';
+                logo.style.width = '120px';  // Increased logo size
+            }
+        }
+        
+        // Adjust on page load
+        window.addEventListener('load', adjustResponsiveness);
+        
+        // Adjust on window resize
+        window.addEventListener('resize', adjustResponsiveness);
+    </script>
+</body>
+</html>

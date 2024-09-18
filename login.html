@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+        }
+
+        #splash {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Align items in a column (logo and text) */
+            background: linear-gradient(135deg, #0000FF, #8A2BE2); /* Gradient from blue to violet */
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 1s ease-out;
+        }
+
+        #logo {
+            width: 300px; /* Adjust the size of your logo */
+            animation: splash-animation 1s forwards;
+            filter: none; /* Ensure logo is not blurred */
+        }
+
+        #popup-text {
+            margin-top: 45px; /* Spacing between logo and text */
+            font-size: 30px;
+            color: white;
+            opacity: 0;
+            animation: text-animation 1s 1s forwards; /* Delay text animation until logo animation starts */
+        }
+
+        @keyframes splash-animation {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes text-animation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Animation</title>
+</head>
+<body>
+    <div id="splash">
+        <img src="images/logo3.png" alt="Logo" id="logo">
+        <div id="popup-text">Welcome to Computer Science</div> <!-- Pop-up text below the logo -->
+    </div>
+    <script>
+        window.addEventListener('load', () => {
+            const splash = document.getElementById('splash');
+            
+            // Hold splash screen for at least 5 seconds before transitioning
+            setTimeout(() => {
+                splash.style.opacity = '0'; // Fade out splash screen
+                splash.addEventListener('transitionend', () => {
+                    window.location.href = 'mycss.html'; // Replace with your target HTML file
+                });
+            }, 3000); // 5 seconds delay
+        });
+    </script>
+</body>
+</html>

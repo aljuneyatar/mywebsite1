@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Computer Science</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+    .float-left {
+    margin-bottom: 100px;
+}
+.button {
+  width: 45px;
+  height: 45px;
+  background-color: #3b5998;
+  border: none;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.185),
+              0px 3px 3px rgba(255, 255, 255, 0.178) inset,
+              0px -3px 3px rgba(0, 0, 0, 0.281) inset;
+  transition: all .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-bottom: 3px;
+}
+
+.button::before {
+  background-color: transparent;
+  content: "f";
+  font-size: 1.6em;
+  font-weight: 700;
+  color: white;
+  z-index: 5;
+  transition: all .3s;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.button::after {
+  content: "acebook";
+  background-color: transparent;
+  font-size: 0;
+  opacity: 0;
+  font-weight: 700;
+  color: white;
+  z-index: 5;
+  transition: all .3s;
+  transform: translateX(60px);
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.button:hover {
+  width: 160px;
+  border-radius: 30px;
+}
+
+.button:hover::after {
+  opacity: 1;
+  font-size: 1.6em;
+  transform: translateX(0px);
+  
+}
+.stu-icon {
+    width: 50px;  /* Adjust the width as needed */
+    height: 50px; /* Maintain aspect ratio */
+}
+
+
+
+
+</style>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0" id="home">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0">Computer Science</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="#home" class="nav-item nav-link active">Home</a>
+                        <a href="#about" class="nav-item nav-link">About</a>
+                        <a href="#feature" class="nav-item nav-link">Feature</a>
+                        <a href="#pricing" class="nav-item nav-link">Pricing</a>
+                        <a href="#review" class="nav-item nav-link">Review</a>
+                        <a href="#contact" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <a href="" class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Watch Video</a>
+                </div>
+            </nav>
+            <div class="container-xxl bg-primary hero-header">
+                <div class="container px-lg-5">
+                    <div class="row g-5">
+                        <div class="col-lg-8 text-center text-lg-start">
+                            <!-- Insert your image here -->
+                            <img class="img-fluid mb-4 float-left" src="images/bugsay.png" alt="Descriptive Alt Text">
+                            
+                            <p class="text-white pb-3 animated slideInDown">Tempor rebum no at dolore lorem clita rebum rebum ipsum rebum stet dolor sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam sit justo amet ipsum vero ipsum clita lorem</p>
+                            <a href="#feature" class="btn btn-primary-gradient py-sm-3 px-4 px-sm-5 rounded-pill me-1 animated slideInLeft">Discover</a>
+                            
+                            <!-- New Facebook Button -->
+                            <button id="facebookButton" class="button"></button>
+                        </div>
+                        
+                        <div class="col-lg-4 d-flex justify-content-center justify-content-lg-end wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="owl-carousel screenshot-carousel">
+                                <img class="img-fluid" src="" alt="">
+                                <img class="img-fluid" src="img/screenshot-2.png" alt="">
+                                <img class="img-fluid" src="img/screenshot-3.png" alt="">
+                                <img class="img-fluid" src="img/screenshot-4.png" alt="">
+                                <img class="img-fluid" src="img/screenshot-5.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        <!-- Navbar & Hero End -->
+
+
+        <!-- About Start -->
+        <div class="container-xxl py-5" id="about">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="text-primary-gradient fw-medium">About</h1>
+                        
+                        <p class="mb-4">The Bachelor of Science in Computer Science equips students with essential knowledge, skills, and values to create top-notch software, innovative algorithms, and commercially viable computing innovations, while also fostering impactful Corporate Social Responsibility programs and producing competitive graduates meeting industry and community needs.</h5>
+                        <div class="row g-4 mb-4">
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                                <br>
+                                <br>
+                                <div class="d-flex">
+                                    <img src="images/stu_icon.png" class="stu-icon" alt="Icon">
+                                    <div class="ms-3">
+                                        <h2 class="mb-0" data-toggle="counter-up">1234</h2>
+                                        Student in the Computer Science
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+                                <div class="d-flex">
+                                   
+                                    <div class="ms-3">
+                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="img-fluid wow fadeInUp" data-wow-delay="0.5s" src="images/logo3.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+       
+        <!-- Features Start -->
+<div class="container-xxl py-5" id="feature">
+    <div class="container py-5 px-lg-5">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="text-primary-gradient fw-medium">Bachelor of Science in Computer Science</h5>
+            <h1 class="mb-5">Career Opportunities after Graduation</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <img src="images/softdev.png" alt="Software Developer" style="width: 60px; height: 60px;">
+                    </div>
+                    <h5 class="mb-3">Software Developer</h5>
+                    <p class="m-0">A software developer is a professional who designs, creates, tests, and maintains software applications or systems.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <img src="images/datascie.png" alt="Retina Ready" style="width: 60px; height: 60px;">
+                    </div>
+                    <h5 class="mb-3">Data Scientist</h5>
+                    <p class="m-0">A data scientist is a professional who uses scientific methods, algorithms, and systems to extract insights and knowledge. </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <img src="images/webdev.png" alt="Editable Data" style="width: 60px; height: 60px;">
+                    </div>
+                    <h5 class="mb-3">Web Developer</h5>
+                    <p class="m-0"> Web developer is a professional who builds and maintains websites and web applications, focusing on both the technical functionality and user experience. </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <img src="images/databasead.png" alt="Fully Secured" style="width: 60px; height: 50px;">
+                    </div>
+                    <h5 class="mb-3">Database Administrator</h5>
+                    <p class="m-0">Database Administrator (DBA) manages, secures, and maintains an organization's databases, ensuring their performance, availability, and integrity.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <img src="images/gamedev.png" alt="Cloud Storage" style="width: 50px; height: 50px;">
+                    </div>
+                    <h5 class="mb-3">Game Developer</h5>
+                    <p class="m-0">A game developer is a professional who designs, creates, and programs video games, working on various aspects such as gameplay mechanics,.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="feature-item bg-light rounded p-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle mb-4" style="width: 60px; height: 60px;">
+                        <img src="images/uixdes.png" alt="Fully Responsive" style="width: 50px; height: 50px;">
+                    </div>
+                    <h5 class="mb-3">UI/UX Designer</h5>
+                    <p class="m-0">A UI/UX Designer focuses on creating user interfaces (UI) and enhancing user experiences (UX) for digital products, ensuring that they are visually appealing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Features End -->
+
+<br>   
+<br>    
+
+     
+
+
+    <div class="container py-5 px-lg-5">
+        <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="text-primary-gradient fw-medium">MIS</h5>
+            <h1 class="mb-5">Online Application</h1>
+        </div>
+        <div class="row gy-5 gx-4 justify-content-center">
+            <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                        <img src="images/book3.png" alt="Install the App" style="width: 50px; height: 50px;">
+                    </div>
+                    <h5 class="mt-4 mb-3">Online Admission for University</h5>
+                    <!-- New Button -->
+                   <a href="https://asuapp.online/" class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block">CLICK</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-secondary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                        <img src="images/book2.png" alt="Setup Your Profile" style="width: 60px; height: 60px;">
+                    </div>
+                    <h5 class="mt-4 mb-3">University Information System</h5>
+                    <!-- New Button -->
+                    <a href="https://umis.online/UMIS/index.php" class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block">CLICK</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="position-relative bg-light rounded pt-5 pb-4 px-4">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-primary-gradient rounded-circle position-absolute top-0 start-50 translate-middle shadow" style="width: 100px; height: 100px;">
+                        <img src="images/book1.png" alt="Enjoy The Features" style="width: 60px; height: 60px;">
+                    </div>
+                    <h5 class="mt-4 mb-3">Learning Management System</h5>
+                    <!-- New Button -->
+                    <a href="https://lmskalibo.online/login/index.php" class="btn btn-primary-gradient rounded-pill py-2 px-4 ms-3 d-none d-lg-block">CLICK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Process End -->
+<!-- Download Start -->
+<div class="container-xxl py-5" id="download">
+    <div class="container py-5 px-lg-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <img class="img-fluid wow fadeInUp" data-wow-delay="0.1s" src="images/stu_icon.png">
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <h5 class="text-primary-gradient fw-medium">Download</h5>
+                <h1 class="mb-4">Download The Latest Version Of Our App</h1>
+                <p class="mb-4">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit clita duo justo eirmod magna dolore erat amet</p>
+                <div class="owl-carousel owl-theme">
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Download End -->
+
+
+
+<!-- Testimonial Start -->
+<div class="container-xxl py-5" id="review">
+    <div class="container py-5 px-lg-5">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h5 class="text-primary-gradient fw-medium">Instructor</h5>
+            <h1 class="mb-5">Instructors and Proffessors</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+            <!-- Existing Testimonial Items -->
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/kent.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Mr. Gazle Kent Gillesania</h5>
+                        <p class="mb-1">Instructor 1</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+                <p>Bachelor of Science in Computer Science</p>
+            </div>
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/ausan.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Mr. Cyril D. Ausan</h5>
+                        <p class="mb-1">Instructor 1</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+            <p>Bachelor of Science in Computer Science</p>
+            </div>
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/reimar.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Prof. Reimar R. Tingga</h5>
+                        <p class="mb-1">Asst. Prof IV</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+            <p>Bachelor of Science in Computer Science.</p>
+            </div>
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/espanola.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Prof. JingChor T. Espanola</h5>
+                        <p class="mb-1">Asst. Prof III</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+                <p>Bachelor of Science in Computer Science</p>
+            </div>
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/kent.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Mr. Gazle Kent Gillesania</h5>
+                        <p class="mb-1">Instructor</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+            <p>Bachelor of Science in Computer Science</p>
+            </div>
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/jess.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Mr. Jess Z. Masula</h5>
+                        <p class="mb-1">Instructor 1</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+                <p>Bachelor of Science in Computer Science</p>
+            </div>
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/gary.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Dr. Gary T. Tabanera</h5>
+                        <p class="mb-1">Instructor</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+                <p>Bachelor of Science in Computer Science</p>
+            </div>
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/benito.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Mr. Wilmer N. Benito</h5>
+                        <p class="mb-1">Instructor 1</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+            <p>Bachelor of Science in Computer Science</p>
+            </div>
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/alonsagay.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Mr. Richard P. Alonsagay</h5>
+                        <p class="mb-1">Instructor</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+            <p>Bachelor of Science in Computer Science</p>
+            </div>
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/arjay.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Mr. Arjay A. Placio</h5>
+                        <p class="mb-1">Instructor</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+                <p>Bachelor of Science in Computer Science</p>
+            </div>
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/eva.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Mrs. Eva Rose T. Cadiz</h5>
+                        <p class="mb-1">Instructor</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+                <p>Bachelor of Science in Computer Science</p>
+            </div>
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/danica.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Ms. Danica D. Antaran</h5>
+                        <p class="mb-1">Intructor</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+            <p>Bachelor of Science in Computer Science</p>
+            </div>
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/carl.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Mr. Carl B. Zambrona</h5>
+                        <p class="mb-1">Instructor</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+                <p>Bachelor of Science in Computer Science</p>
+            </div>
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/marlyn.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Ms. Marlyn F. Lutao</h5>
+                        <p class="mb-1">Instructor</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+                <p>Bachelor of Science in Computer Science</p>
+            </div>
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/mark.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Mr. Mark Anthony Sumanga</h5>
+                        <p class="mb-1">Instructor</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+            <p>Bachelor of Science in Computer Science</p>
+            </div>
+            <!-- Additional 2 Testimonials -->
+            <div class="testimonial-item rounded p-4">
+                <div class="d-flex align-items-center mb-4">
+                    <img class="img-fluid bg-white rounded flex-shrink-0 p-1" src="images/janjes.jpg" style="width: 85px; height: 85px;">
+                    <div class="ms-4">
+                        <h5 class="mb-1">Client Name</h5>
+                        <p class="mb-1">Profession</p>
+                        <div>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                            <small class="fa fa-star text-warning"></small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mb-0">Aklan State University - Ibajay Campus </p>
+                <p>Bachelor of Science in Computer Science</p>
+            </div>
+          
+                    </div>
+                </div>
+              
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+
+        <!-- Contact Start -->
+        <div class="container-xxl py-5" id="contact">
+            <div class="container py-5 px-lg-5">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="text-primary-gradient fw-medium">Contact Us</h5>
+                    <h1 class="mb-5">Get In Touch</h1>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="contact-form">
+                            <h5 class="mb-4">Send Us A Message</h5>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary-gradient rounded-pill py-2 px-4">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="contact-info">
+                            <h5 class="mb-4">Contact Information</h5>
+                            <p><i class="fa fa-map-marker-alt me-2"></i>123 Street, City, Country</p>
+                            <p><i class="fa fa-phone-alt me-2"></i>(+123) 456 7890</p>
+                            <p><i class="fa fa-envelope me-2"></i>email@example.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+
+
+
+
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up text-white"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Add event listener for the LMS button
+        document.querySelector('.btn.btn-primary-gradient.rounded-pill.py-2.px-4.ms-3.d-none.d-lg-block').addEventListener('click', function(event) {
+            // Prevent the default action
+            event.preventDefault();
+            
+            // Display a confirmation dialog
+            var confirmation = confirm('Are you sure you want to visit the Learning Management System?');
+            if (confirmation) {
+                window.location.href = 'https://lmskalibo.online/login/index.php'; // Replace with the actual URL
+            }
+        });
+    </script>
+    <script>
+        document.getElementById('facebookButton').addEventListener('click', function() {
+            window.location.href = 'https://www.facebook.com/yourpage'; // Replace with your Facebook page URL
+        });
+    </script>
+    <script>document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector('a[href="#pricing"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#download').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+</body>
+
+</html>
